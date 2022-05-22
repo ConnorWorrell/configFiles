@@ -45,7 +45,7 @@ srandrd -n automon &
 
 otd > /tmp/otd.log &
 
-batteryCheckReload &
+[ "$(cat /sys/class/dmi/id/chassis_type)" != "3" ] && batteryCheckReload &
 
 # exec i3
 exec dwm
