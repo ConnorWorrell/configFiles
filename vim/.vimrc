@@ -24,7 +24,12 @@ set encoding=utf8
 
 set smarttab
 set shiftwidth=4
+set expandtab
 set tabstop=4
+
+set list
+"set listchars=tab:>-
+set listchars=eol:¬,tab:▸\ 
 
 set wrap
 
