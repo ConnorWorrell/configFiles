@@ -11,5 +11,5 @@ function sudo
 end
 
 function cdf
-	source ~/.scripts/cdf $argv
+	source ~/.scripts/cdf $argv &> /dev/null
 end
