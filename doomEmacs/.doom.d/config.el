@@ -79,6 +79,16 @@
 (set-frame-parameter (selected-frame) 'alpha '(97 . 88))
 (add-to-list 'default-frame-alist '(alpha . (97 . 88)))
 
+
+
+(require 'dired-toggle-sudo)
+ (define-key dired-mode-map (kbd "C-c C-s") 'dired-toggle-sudo)
+ (eval-after-load 'tramp
+  '(progn
+     ;; Allow to use: /sudo:user@host:/path/to/file
+     (add-to-list 'tramp-default-proxies-alist
+          '(".*" "\\`.+\\'" "/ssh:%h:"))))
+
 ;;(defun toggle-transparency ()
 ;;   (interactive)
 ;;   (let ((alpha (frame-parameter nil 'alpha)))
@@ -97,3 +107,5 @@
 ;;   "Sets the transparency of the frame window. 0=transparent/100=opaque"
 ;;   (interactive "nTransparency Value 0 - 100 opaque:")
 ;;   (set-frame-parameter (selected-frame) 'alpha value))
+
+(latex-preview-pane-enable)

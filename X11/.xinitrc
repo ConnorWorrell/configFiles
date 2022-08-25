@@ -8,7 +8,7 @@ unset f
 setWallpaper -r &
 
 # compositor
-picom -b &
+picom --experimental-backends -b &
 
 #xautolock -time 60 -locker lock
 
