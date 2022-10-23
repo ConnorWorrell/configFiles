@@ -1,24 +1,40 @@
+
+window#waybar {
+    background-color:rgba (34,34,34,.8);
+    color: #e5e9f0;
+}
+
+#network, #bluetooth, #cpu, #memory, #battery, #backlight, #idel_inhibitor, #pulseaudio, #tray, #clock {
+    padding-right: 5px;
+    padding-left: 5px;
+    border-right: 1px solid #004d4d;
+    color: #bbbbbb;
+}
+
 #custom-dwl_layout {
     color: #EC5800
 }
 
 #custom-dwl_title {
-    color: #017AFF
+    color: #bbbbbb;
+    background-color: #004d4d;
 }
 
 #custom-dwl_tag {
-    color: #875F00
+    color: #bbbbbb;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 #custom-dwl_tag.selected {
-    color: #017AFF
+    background-color:rgba (0,77,77,.8);
+    color: #bbbbbb;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 #custom-dwl_tag.urgent {
-    background-color: #FF0000
+    background-color:rgba (1000,0,0,.8);
+    padding-right: 5px;
+    padding-left: 5px;
 }
-
-#custom-dwl_tag.active {
-    border-top: 1px solid #EC5800
-}
-

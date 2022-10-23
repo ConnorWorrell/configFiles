@@ -2,6 +2,112 @@
    "layer": "top",
     "output":"eDP-1",
    "modules-left": ["custom/dwl_tag#0", "custom/dwl_tag#1", "custom/dwl_tag#2", "custom/dwl_tag#3", "custom/dwl_tag#4", "custom/dwl_tag#5", "custom/dwl_layout1", "custom/dwl_title1"],
+   "modules-right": [//"network",
+        //"bluetooth",
+        //"cpu",
+        "memory",
+        "battery",                  // use for compliant batteries
+        //"backlight",
+        //"idle_inhibitor",
+        //"pulseaudio",
+        "tray",
+        "clock"
+    ],
+    "tray": {
+        "spacing": 10
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-charging": " {icon} {capacity}%", // Icon: bolt
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-empty
+            "", // Icon: battery-quarter
+            "", // Icon: battery-half
+            "", // Icon: battery-three-quarters
+            ""  // Icon: battery-full
+        ],
+        "tooltip": true
+    },
+    "clock": {
+        "interval": 60,
+        "format": " {:%e %b %Y %H:%M}", // Icon: calendar-alt
+        "tooltip": true,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "on-click": "swaymsg exec \\$calendar"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%", // Icon: microchip
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \"\\$term_float_landscape \\$cpu_mon\""
+    },
+    "memory": {
+        "interval": 10,
+        "format": " {}%", // Icon: memory
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \"\\$term_float_landscape \\$mem_mon\""
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{icon} {volume}%   {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "swaymsg exec \\$pulseaudio"
+    },
+    "temperature": {
+      "critical-threshold": 90,
+      "interval": 30,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": [
+          "", // Icon: temperature-empty
+          "", // Icon: temperature-quarter
+          "", // Icon: temperature-half
+          "", // Icon: temperature-three-quarters
+          ""  // Icon: temperature-full
+      ],
+      "tooltip": true
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "on-click-right": "rfkill toggle bluetooth",
+        "tooltip-format": "{}"
+    },
    "custom/dwl_tag#0": {
      "exec": "~/Packages/Waybar-dwl/waybar-dwl.sh 'eDP-1' 0",
      "format": "{}",
@@ -70,6 +176,112 @@
    "layer": "top",
     "output": "DP-1",
    "modules-left": ["custom/dwl_tag#11", "custom/dwl_tag#12", "custom/dwl_tag#13", "custom/dwl_tag#14", "custom/dwl_tag#15", "custom/dwl_tag#16", "custom/dwl_layout2", "custom/dwl_title2"],
+   "modules-right": [//"network",
+        //"bluetooth",
+        //"cpu",
+        "memory",
+        "battery",                  // use for compliant batteries
+        //"backlight",
+        //"idle_inhibitor",
+        //"pulseaudio",
+        "tray",
+        "clock"
+    ],
+    "tray": {
+        "spacing": 10
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-charging": " {icon} {capacity}%", // Icon: bolt
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-empty
+            "", // Icon: battery-quarter
+            "", // Icon: battery-half
+            "", // Icon: battery-three-quarters
+            ""  // Icon: battery-full
+        ],
+        "tooltip": true
+    },
+    "clock": {
+        "interval": 60,
+        "format": " {:%e %b %Y %H:%M}", // Icon: calendar-alt
+        "tooltip": true,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "on-click": "swaymsg exec \\$calendar"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%", // Icon: microchip
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \"\\$term_float_landscape \\$cpu_mon\""
+    },
+    "memory": {
+        "interval": 10,
+        "format": " {}%", // Icon: memory
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \"\\$term_float_landscape \\$mem_mon\""
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{icon} {volume}%   {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "swaymsg exec \\$pulseaudio"
+    },
+    "temperature": {
+      "critical-threshold": 90,
+      "interval": 30,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": [
+          "", // Icon: temperature-empty
+          "", // Icon: temperature-quarter
+          "", // Icon: temperature-half
+          "", // Icon: temperature-three-quarters
+          ""  // Icon: temperature-full
+      ],
+      "tooltip": true
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "on-click-right": "rfkill toggle bluetooth",
+        "tooltip-format": "{}"
+    },
    "custom/dwl_tag#11": {
      "exec": "~/Packages/Waybar-dwl/waybar-dwl.sh 'DP-1' 0",
      "format": "{}",
